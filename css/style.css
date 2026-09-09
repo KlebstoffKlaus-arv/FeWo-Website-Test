@@ -197,6 +197,10 @@ select:focus-visible {
   transform: translateY(-2px);
 }
 
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
 .btn-primary {
   background: var(--color-moss-dark);
   color: #fff;
@@ -229,6 +233,15 @@ select:focus-visible {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--color-border);
+  transition: box-shadow var(--transition);
+}
+
+.site-header.is-scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header.is-scrolled .site-header__inner {
+  padding-block: 0.7rem;
 }
 
 /* backdrop-filter lives on a pseudo-element so it doesn't establish a
@@ -247,6 +260,7 @@ select:focus-visible {
   align-items: center;
   justify-content: space-between;
   padding-block: var(--space-2);
+  transition: padding-block var(--transition);
 }
 
 .brand {
@@ -358,14 +372,28 @@ select:focus-visible {
   }
 
   .main-nav__list a {
+    position: relative;
     padding: 0.3em 0;
-    border-bottom: 2px solid transparent;
     font-size: var(--fs-sm);
+    border-bottom: none;
   }
 
-  .main-nav__list a:hover,
-  .main-nav__list a[aria-current="page"] {
-    border-bottom-color: var(--color-moss-dark);
+  .main-nav__list a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--color-moss-dark);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 260ms ease;
+  }
+
+  .main-nav__list a:hover::after,
+  .main-nav__list a[aria-current="page"]::after {
+    transform: scaleX(1);
   }
 
   .main-nav__cta {
@@ -393,6 +421,7 @@ select:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: kenBurns 22s ease-in-out infinite alternate;
 }
 
 .hero__media::after {
@@ -428,6 +457,17 @@ select:focus-visible {
   gap: var(--space-2);
 }
 
+.hero__content > * {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: heroFadeUp 800ms ease forwards;
+}
+
+.hero__content > *:nth-child(1) { animation-delay: 120ms; }
+.hero__content > *:nth-child(2) { animation-delay: 260ms; }
+.hero__content > *:nth-child(3) { animation-delay: 400ms; }
+.hero__content > *:nth-child(4) { animation-delay: 540ms; }
+
 .page-hero {
   position: relative;
   color: #fff;
@@ -444,6 +484,7 @@ select:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: kenBurns 22s ease-in-out infinite alternate;
 }
 
 .page-hero__media::after {
@@ -465,6 +506,28 @@ select:focus-visible {
 .page-hero__content p {
   font-size: var(--fs-md);
   color: #f1ede2;
+}
+
+.page-hero__content > * {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: heroFadeUp 800ms ease forwards;
+}
+
+.page-hero__content > *:nth-child(1) { animation-delay: 120ms; }
+.page-hero__content > *:nth-child(2) { animation-delay: 260ms; }
+.page-hero__content > *:nth-child(3) { animation-delay: 400ms; }
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
 }
 
 /* ---------- Facts strip ---------- */
@@ -531,6 +594,12 @@ select:focus-visible {
 
 .teaser-card:hover {
   box-shadow: var(--shadow-md);
+}
+
+/* höhere Spezifität, damit die Stagger-Reveal-Transition die
+   box-shadow-Transition beim Hover nicht überschreibt */
+.teasers.reveal-stagger > .teaser-card {
+  transition: opacity 600ms ease, transform 600ms ease, box-shadow var(--transition);
 }
 
 .teaser-card img {
@@ -642,6 +711,29 @@ select:focus-visible {
   width: auto;
   margin-inline: auto;
   border-radius: var(--radius);
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.lightbox__figure img.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.lightbox__figure {
+  animation: lightboxIn 260ms ease;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .lightbox__caption {
@@ -1104,12 +1196,51 @@ select:focus-visible {
   transform: none;
 }
 
+/* Gestaffeltes Einblenden für Karten-Grids (Teaser, Galerie, Facts, Ausstattung) */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 90ms; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 180ms; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 270ms; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 360ms; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 450ms; }
+.reveal-stagger > *:nth-child(n + 7) { transition-delay: 500ms; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal {
+  .reveal,
+  .reveal-stagger > * {
     opacity: 1;
     transform: none;
     transition: none;
   }
   .teaser-card:hover img { transform: none; }
+  .hero__media img,
+  .page-hero__media img {
+    animation: none;
+  }
+  .hero__content > *,
+  .page-hero__content > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .lightbox__figure {
+    animation: none;
+  }
+  .lightbox__figure img {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -48,9 +48,16 @@
 
   function updateImage() {
     var item = items[currentIndex];
-    imgEl.src = item.src;
-    imgEl.alt = item.alt;
-    captionEl.textContent = item.alt;
+    imgEl.classList.remove("is-visible");
+    var swap = function () {
+      imgEl.src = item.src;
+      imgEl.alt = item.alt;
+      captionEl.textContent = item.alt;
+      requestAnimationFrame(function () {
+        imgEl.classList.add("is-visible");
+      });
+    };
+    window.setTimeout(swap, 120);
   }
 
   function showPrev() {

@@ -33,7 +33,7 @@
   }
 
   /* ---------- Scroll reveal ---------- */
-  var revealEls = document.querySelectorAll(".reveal");
+  var revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
   if ("IntersectionObserver" in window && revealEls.length) {
     var observer = new IntersectionObserver(
       function (entries) {
@@ -53,6 +53,16 @@
     revealEls.forEach(function (el) {
       el.classList.add("is-visible");
     });
+  }
+
+  /* ---------- Header scroll state ---------- */
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var updateHeaderState = function () {
+      header.classList.toggle("is-scrolled", window.scrollY > 12);
+    };
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
   }
 
   /* ---------- Footer year ---------- */
