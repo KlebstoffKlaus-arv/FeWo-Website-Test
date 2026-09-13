@@ -1,27 +1,29 @@
 /* ==========================================================================
    Ferienwohnung Elias – Design-System & globale Styles
+   Stil: Dunkles, gemütliches Chalet – Anthrazit/Tannengrün mit Gold-Akzenten
    ========================================================================== */
 
 :root {
-  /* Farben – warmes Off-White, gedeckte Naturtöne */
-  --color-bg: #faf8f4;
-  --color-bg-alt: #f2efe7;
-  --color-surface: #ffffff;
-  --color-stone: #ded7c9;
-  --color-text: #2f2b24;
-  --color-text-muted: #5c574c;
-  --color-moss: #5c6e52;
-  --color-moss-dark: #47563f;
-  --color-wood: #a9784f;
-  --color-wood-dark: #8a5f3b;
-  --color-border: #e3ddd0;
-  --color-success-bg: #e9f0e4;
-  --color-success-text: #3d5334;
-  --color-error-bg: #fbeae7;
-  --color-error-text: #8a3324;
+  /* Farben – dunkles Chalet: warmes Anthrazit/Kohle als Basis, Messing/Gold als Akzent */
+  --color-bg: #17140f;
+  --color-bg-alt: #1e1a13;
+  --color-surface: #241f16;
+  --color-stone: #3c3323;
+  --color-text: #f1e8d8;
+  --color-text-muted: #b7a98e;
+  --color-moss: #7c9370;
+  --color-moss-dark: #38492f;
+  --color-gold: #c9a25a;
+  --color-gold-dark: #a9823f;
+  --color-border: #362d1e;
+  --color-success-bg: #223321;
+  --color-success-text: #a9cf9c;
+  --color-error-bg: #3a2019;
+  --color-error-text: #e3a794;
 
   /* Typografie */
   --font-base: "Jost", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --fs-xs: 0.8125rem;
   --fs-sm: 0.9375rem;
   --fs-base: 1.0625rem;
@@ -45,8 +47,8 @@
   --max-width: 1200px;
   --radius: 6px;
   --radius-lg: 10px;
-  --shadow-sm: 0 1px 3px rgba(40, 35, 25, 0.08);
-  --shadow-md: 0 8px 24px rgba(40, 35, 25, 0.1);
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.55);
   --transition: 220ms ease;
 }
 
@@ -59,6 +61,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -86,10 +89,11 @@ ul {
 }
 
 h1, h2, h3, h4 {
+  font-family: var(--font-display);
   font-weight: 600;
   line-height: var(--lh-tight);
   margin: 0 0 var(--space-2);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 h1 { font-size: var(--fs-xl); }
@@ -117,7 +121,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--color-moss);
+  outline: 2px solid var(--color-gold);
   outline-offset: 3px;
 }
 
@@ -126,12 +130,13 @@ select:focus-visible {
   position: absolute;
   top: -100px;
   left: var(--space-2);
-  background: var(--color-moss-dark);
-  color: #fff;
+  background: var(--color-gold);
+  color: #1b1610;
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius);
   z-index: 200;
   transition: top var(--transition);
+  font-weight: 600;
 }
 .skip-link:focus {
   top: var(--space-2);
@@ -165,9 +170,9 @@ select:focus-visible {
 .eyebrow {
   display: inline-block;
   font-size: var(--fs-xs);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-wood-dark);
+  color: var(--color-gold);
   font-weight: 600;
   margin-bottom: var(--space-1);
 }
@@ -202,11 +207,11 @@ select:focus-visible {
 }
 
 .btn-primary {
-  background: var(--color-moss-dark);
-  color: #fff;
+  background: var(--color-gold);
+  color: #1b1610;
 }
 .btn-primary:hover {
-  background: var(--color-moss);
+  background: #dcb670;
 }
 
 .btn-secondary {
@@ -215,16 +220,16 @@ select:focus-visible {
   border-color: var(--color-stone);
 }
 .btn-secondary:hover {
-  border-color: var(--color-moss-dark);
+  border-color: var(--color-gold);
   background: var(--color-surface);
 }
 
 .btn-light {
-  background: #fff;
-  color: var(--color-text);
+  background: rgba(241, 232, 216, 0.95);
+  color: #1b1610;
 }
 .btn-light:hover {
-  background: var(--color-bg-alt);
+  background: #fff;
 }
 
 /* ---------- Header / Navigation ---------- */
@@ -251,7 +256,7 @@ select:focus-visible {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(250, 248, 244, 0.92);
+  background: rgba(16, 14, 10, 0.88);
   backdrop-filter: blur(8px);
 }
 
@@ -271,15 +276,17 @@ select:focus-visible {
 }
 
 .brand__name {
+  font-family: var(--font-display);
   font-size: var(--fs-md);
   font-weight: 700;
   letter-spacing: 0.02em;
+  color: var(--color-text);
 }
 
 .brand__sub {
   font-size: var(--fs-xs);
-  color: var(--color-text-muted);
-  letter-spacing: 0.06em;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -345,7 +352,7 @@ select:focus-visible {
 }
 
 .main-nav__list a[aria-current="page"] {
-  color: var(--color-moss-dark);
+  color: var(--color-gold);
   font-weight: 600;
 }
 
@@ -385,7 +392,7 @@ select:focus-visible {
     right: 0;
     bottom: -1px;
     height: 2px;
-    background: var(--color-moss-dark);
+    background: var(--color-gold);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 260ms ease;
@@ -428,7 +435,7 @@ select:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(30, 27, 20, 0.15) 0%, rgba(30, 27, 20, 0.65) 100%);
+  background: linear-gradient(180deg, rgba(10, 8, 5, 0.25) 0%, rgba(10, 8, 5, 0.8) 100%);
 }
 
 .hero__content {
@@ -437,7 +444,7 @@ select:focus-visible {
 }
 
 .hero__content .eyebrow {
-  color: #e7dfc9;
+  color: var(--color-gold);
 }
 
 .hero__content h1 {
@@ -491,7 +498,7 @@ select:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(30, 27, 20, 0.5);
+  background: rgba(10, 8, 5, 0.62);
 }
 
 .page-hero__content {
@@ -554,9 +561,10 @@ select:focus-visible {
 
 .facts__value {
   display: block;
+  font-family: var(--font-display);
   font-size: var(--fs-lg);
   font-weight: 700;
-  color: var(--color-moss-dark);
+  color: var(--color-gold);
   margin-bottom: 0.2em;
 }
 
@@ -617,7 +625,22 @@ select:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20, 18, 12, 0) 40%, rgba(20, 18, 12, 0.78) 100%);
+  background: linear-gradient(180deg, rgba(10, 8, 5, 0) 35%, rgba(10, 8, 5, 0.88) 100%);
+}
+
+.teaser-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201, 162, 90, 0.35);
+  border-radius: var(--radius-lg);
+  z-index: 3;
+  pointer-events: none;
+  transition: border-color var(--transition);
+}
+
+.teaser-card:hover::before {
+  border-color: rgba(201, 162, 90, 0.8);
 }
 
 .teaser-card__body {
@@ -640,6 +663,7 @@ select:focus-visible {
   gap: 0.4em;
   font-size: var(--fs-sm);
   font-weight: 600;
+  color: var(--color-gold);
 }
 
 .teaser-card__link svg {
@@ -678,18 +702,20 @@ select:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 500ms ease;
+  transition: transform 500ms ease, filter 500ms ease;
+  filter: saturate(0.92) brightness(0.94);
 }
 
 .gallery__item:hover img {
   transform: scale(1.05);
+  filter: saturate(1) brightness(1);
 }
 
 .lightbox {
   position: fixed;
   inset: 0;
   z-index: 300;
-  background: rgba(20, 18, 12, 0.92);
+  background: rgba(10, 8, 5, 0.94);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -745,9 +771,9 @@ select:focus-visible {
 .lightbox__close,
 .lightbox__nav {
   position: absolute;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
+  background: rgba(201, 162, 90, 0.14);
+  border: 1px solid rgba(201, 162, 90, 0.4);
+  color: #f1e8d8;
   border-radius: 50%;
   width: 46px;
   height: 46px;
@@ -755,12 +781,13 @@ select:focus-visible {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background var(--transition);
+  transition: background var(--transition), border-color var(--transition);
 }
 
 .lightbox__close:hover,
 .lightbox__nav:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(201, 162, 90, 0.28);
+  border-color: rgba(201, 162, 90, 0.7);
 }
 
 .lightbox__close {
@@ -810,10 +837,11 @@ select:focus-visible {
   height: 40px;
   border-radius: 50%;
   background: var(--color-bg-alt);
-  color: var(--color-moss-dark);
+  color: var(--color-gold);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--color-border);
 }
 
 .feature-list__icon svg {
@@ -843,6 +871,7 @@ select:focus-visible {
 
 .split img {
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 /* ---------- Pricing table ---------- */
@@ -882,6 +911,7 @@ select:focus-visible {
 .price-table thead th {
   background: var(--color-bg-alt);
   font-weight: 600;
+  color: var(--color-gold);
 }
 
 .price-table tbody tr:hover {
@@ -915,7 +945,7 @@ select:focus-visible {
 }
 
 .included-card h3 {
-  color: var(--color-moss-dark);
+  color: var(--color-gold);
 }
 
 .included-card ul {
@@ -937,7 +967,7 @@ select:focus-visible {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--color-wood);
+  background: var(--color-gold);
 }
 
 /* ---------- Conditions list ---------- */
@@ -994,7 +1024,7 @@ select:focus-visible {
 }
 
 .form-field .required {
-  color: var(--color-wood-dark);
+  color: var(--color-gold);
 }
 
 .form-field input,
@@ -1006,7 +1036,7 @@ select:focus-visible {
   border-radius: var(--radius);
   font-family: inherit;
   font-size: var(--fs-sm);
-  background: #fff;
+  background: var(--color-bg);
   color: var(--color-text);
   transition: border-color var(--transition);
 }
@@ -1014,7 +1044,7 @@ select:focus-visible {
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  border-color: var(--color-moss-dark);
+  border-color: var(--color-gold);
 }
 
 .form-field small {
@@ -1063,6 +1093,7 @@ select:focus-visible {
 
 .contact-alt {
   background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   align-self: start;
@@ -1085,7 +1116,7 @@ select:focus-visible {
 }
 
 .contact-alt__list a:hover {
-  color: var(--color-moss-dark);
+  color: var(--color-gold);
 }
 
 /* ---------- Map ---------- */
@@ -1104,9 +1135,10 @@ select:focus-visible {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--color-moss-dark);
-  color: #eef1ea;
+  background: #100e0a;
+  color: #eee6d6;
   padding-block: var(--space-6) var(--space-4);
+  border-top: 1px solid var(--color-gold);
 }
 
 .footer-grid {
@@ -1123,7 +1155,8 @@ select:focus-visible {
 }
 
 .site-footer h3 {
-  color: #fff;
+  font-family: var(--font-base);
+  color: var(--color-gold);
   font-size: var(--fs-sm);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1133,16 +1166,17 @@ select:focus-visible {
 .site-footer address,
 .site-footer p {
   font-style: normal;
-  color: #d8e0d1;
+  color: var(--color-text-muted);
   font-size: var(--fs-sm);
 }
 
 .site-footer a {
-  color: #eef1ea;
+  color: #eee6d6;
   text-decoration: none;
 }
 
 .site-footer a:hover {
+  color: var(--color-gold);
   text-decoration: underline;
 }
 
@@ -1153,14 +1187,14 @@ select:focus-visible {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(201, 162, 90, 0.2);
   padding-top: var(--space-3);
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
   justify-content: space-between;
   font-size: var(--fs-xs);
-  color: #c7d1bf;
+  color: var(--color-text-muted);
 }
 
 .footer-bottom__legal {
@@ -1170,7 +1204,11 @@ select:focus-visible {
 }
 
 .footer-bottom__legal a {
-  color: #c7d1bf;
+  color: var(--color-text-muted);
+}
+
+.footer-bottom__legal a:hover {
+  color: var(--color-gold);
 }
 
 /* ---------- Legal pages ---------- */
