@@ -1,0 +1,14 @@
+.fewo-admin { max-width: 980px; }
+.fewo-admin .fewo-card { background: #fff; border: 1px solid #dcdcde; border-radius: 10px; padding: 8px 24px 20px; margin: 20px 0; }
+.fewo-admin h2 { font-size: 1.35em; }
+.fewo-admin .fewo-rows th { font-weight: 600; }
+.fewo-admin .fewo-rows td { vertical-align: middle; }
+.fewo-admin .fewo-rows input[type="text"] { width: 100%; }
+.fewo-admin .fewo-rows input.small-text { width: 90px; }
+.fewo-admin .fewo-rows tbody:empty::after { content: "Noch keine Einträge."; display: block; padding: 12px; color: #646970; }
+.fewo-admin tr.is-past { opacity: .5; }
+.fewo-admin .fewo-sticky { position: sticky; bottom: 0; background: #f0f0f1; padding: 12px 0; margin: 0; z-index: 2; }
+.fewo-admin .fewo-setup { border-style: dashed; }
+.fewo-admin .fewo-status li { margin: 4px 0; }
+.fewo-admin .fewo-status .ok { color: #00a32a; }
+.fewo-admin .fewo-status .todo { color: #b26200; }

@@ -1,0 +1,25 @@
+/* Darstellung im WordPress-Editor: alles sichtbar und gut zu bearbeiten. */
+body { background: #FFFBF5; }
+.hero-visual { height: auto !important; display: grid; gap: 12px; }
+.hero-visual .hero-img { position: relative !important; inset: auto !important; height: 260px; opacity: 1 !important; display: block !important; }
+.float-card { position: relative !important; inset: auto !important; animation: none !important; }
+.fewo-hero { padding-top: 40px !important; }
+.fewo-hero h1 em::after { transform: none !important; animation: none !important; }
+
+/* Sommer- und Winter-Variante kennzeichnen */
+.season-summer, .season-winter { position: relative; outline: 2px dashed rgba(242,166,90,.6); outline-offset: 4px; }
+.season-winter { outline-color: rgba(120,170,210,.8); }
+.season-summer::before, .season-winter::before { content: "Sommer"; position: absolute; top: -14px; right: 0; z-index: 5; font: 600 11px/1 "Inter Variable", sans-serif; letter-spacing: .04em; text-transform: uppercase; background: #F2A65A; color: #1D2B2A; padding: 4px 8px; border-radius: 999px; }
+.season-winter::before { content: "Winter"; background: #9CC3E0; }
+.hero-img.season-summer::before, .hero-img.season-winter::before { top: 8px; right: 8px; }
+
+/* Platzhalter der eigenen Blöcke */
+.fewo-placeholder { border: 2px dashed #1F4E4A; border-radius: 16px; padding: 22px 24px; background: #F6EEE3; font-family: "Inter Variable", sans-serif; }
+.fewo-placeholder strong { font-size: 17px; color: #1F4E4A; }
+.fewo-placeholder p { margin: 6px 0 0; color: #55615F; font-size: 14px; }
+.contact .fewo-placeholder { background: rgba(255,255,255,.1); border-color: #FDEBD8; }
+.contact .fewo-placeholder strong, .contact .fewo-placeholder p { color: #fff; }
+
+/* Galerie im Editor */
+.fewo-gallery.wp-block-gallery { display: flex !important; }
+.fewo-gallery figure.wp-block-image figcaption { opacity: 1 !important; transform: none !important; }

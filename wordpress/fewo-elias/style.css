@@ -1,0 +1,15 @@
+/*
+Theme Name: Ferienwohnung Elias
+Theme URI: https://www.ferienwohnung-elias.at/
+Author: Familie Grabherr
+Description: Eigenes Theme für die Ferienwohnung Elias in Riezlern. Texte, Bilder, Preise und Belegung sind ohne Programmierkenntnisse bearbeitbar. Unterstützt Deutsch, Englisch und Niederländisch (mit Polylang).
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: fewo-elias
+*/
+
+/* Die Gestaltung liegt in assets/css/site.css */
