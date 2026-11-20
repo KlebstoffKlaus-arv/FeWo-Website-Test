@@ -1,0 +1,345 @@
+# Einstellungen für Pages CMS (https://app.pagescms.org)
+# Hier wird festgelegt, welche Felder im Bearbeitungs-Bereich erscheinen.
+
+media:
+  input: images
+  output: /images
+  rename: safe
+  categories: [image]
+
+content:
+  - name: preise
+    label: Belegung & Preise
+    type: file
+    path: content/preise.json
+    format: json
+    fields:
+      - name: belegung
+        label: Belegung (gebuchte Zeiträume)
+        description: Diese Zeiträume erscheinen im Kalender auf der Website als belegt. Am Abreisetag kann der nächste Gast anreisen.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{anreise} bis {abreise} {notiz}"
+        fields:
+          - name: anreise
+            label: Anreise
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: abreise
+            label: Abreise
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: notiz
+            label: Notiz (nur für euch)
+            description: z. B. Name des Gastes – wird auf der Website nicht angezeigt.
+            type: string
+      - name: grundpreis
+        label: Grundpreis pro Nacht (€)
+        description: Gilt, wenn kein Saisonpreis passt. Leer lassen = „Preis auf Anfrage“.
+        type: number
+        options:
+          min: 0
+          step: 0.5
+      - name: endreinigung
+        label: Endreinigung (€)
+        description: Einmalig pro Aufenthalt. Leer lassen, wenn sie nicht extra berechnet wird.
+        type: number
+        options:
+          min: 0
+          step: 0.5
+      - name: gaestetaxe
+        label: Gästetaxe (€ pro Erwachsenem und Nacht)
+        type: number
+        options:
+          min: 0
+          step: 0.05
+      - name: mindestnaechte
+        label: Mindestaufenthalt (Nächte)
+        type: number
+        options:
+          min: 1
+          step: 1
+      - name: saisonpreise
+        label: Saisonpreise
+        description: Optional, z. B. für Weihnachten oder Hochsommer. Der Preisrechner nimmt für jede Nacht den passenden Preis.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}: {von} bis {bis} – {preis} €"
+        fields:
+          - name: name
+            label: Bezeichnung
+            type: string
+          - name: von
+            label: von
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: bis
+            label: bis (einschließlich)
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: preis
+            label: Preis pro Nacht (€)
+            type: number
+            required: true
+            options:
+              min: 0
+              step: 0.5
+      - name: telefon
+        label: Telefonnummer (wird im Kontaktbereich angezeigt)
+        type: string
+      - name: anfrageEmail
+        label: Anfragen gehen an diese E-Mail-Adresse
+        description: Eine neue Adresse muss einmal bei Cloudflare bestätigt werden, sonst kommen keine Anfragen an.
+        type: string
+
+  - name: fotos
+    label: Fotos
+    type: file
+    path: content/fotos.json
+    format: json
+    fields:
+      - name: titelbildSommer
+        label: Großes Titelbild – Sommer
+        type: image
+      - name: titelbildWinter
+        label: Großes Titelbild – Winter
+        type: image
+      - name: galerie
+        label: Fotogalerie „Die Wohnung“
+        description: Das erste Foto wird groß angezeigt. Reihenfolge per Ziehen ändern. Die Bildunterschrift erscheint beim Darüberfahren und in der Großansicht.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index}. {de}"
+        fields:
+          - name: bild
+            label: Foto
+            type: image
+            required: true
+          - name: de
+            label: Bildunterschrift Deutsch
+            type: string
+          - name: en
+            label: Bildunterschrift Englisch
+            type: string
+          - name: nl
+            label: Bildunterschrift Niederländisch
+            type: string
+      - name: umgebungSommer
+        label: Fotos „Umgebung“ – Sommer (3 Stück, in der Reihenfolge der Kacheln)
+        type: image
+        options:
+          multiple:
+            max: 3
+      - name: umgebungWinter
+        label: Fotos „Umgebung“ – Winter (3 Stück, in der Reihenfolge der Kacheln)
+        type: image
+        options:
+          multiple:
+            max: 3
+
+  - name: texte-de
+    label: Texte Deutsch
+    type: file
+    path: content/texte-de.json
+    format: json
+    fields: &texte
+      - name: start
+        label: Startbereich (ganz oben)
+        type: object
+        fields:
+          - name: titelSommer
+            label: Überschrift Sommer
+            description: Ein Wort zwischen *Sternchen* wird farbig hervorgehoben. Eine neue Zeile erzeugt einen Zeilenumbruch.
+            type: text
+          - name: titelWinter
+            label: Überschrift Winter
+            description: Ein Wort zwischen *Sternchen* wird farbig hervorgehoben.
+            type: text
+          - name: textSommer
+            label: Text Sommer
+            type: text
+          - name: textWinter
+            label: Text Winter
+            type: text
+          - name: knopfVerfuegbarkeit
+            label: Knopf „Verfügbarkeit“
+            type: string
+          - name: knopfFotos
+            label: Knopf „Fotos“
+            type: string
+          - name: infoKarte1Titel
+            label: Kärtchen 1 – fett
+            type: string
+          - name: infoKarte1Text
+            label: Kärtchen 1 – Text
+            type: string
+          - name: infoKarte2Titel
+            label: Kärtchen 2 – fett
+            type: string
+          - name: infoKarte2Text
+            label: Kärtchen 2 – Text
+            type: string
+      - name: eckdaten
+        label: Eckdaten (Zahlen unter dem Titelbild)
+        type: object
+        list:
+          max: 4
+          collapsible:
+            collapsed: true
+            summary: "{zahl} {text}"
+        fields:
+          - name: zahl
+            label: Zahl
+            type: string
+          - name: text
+            label: Text
+            type: string
+      - name: wohnung
+        label: Bereich „Die Wohnung“
+        type: object
+        fields:
+          - { name: oberzeile, label: Kleine Oberzeile, type: string }
+          - { name: titel, label: Überschrift, type: string }
+          - { name: text, label: Text, type: text }
+      - name: ausstattung
+        label: Bereich „Ausstattung“
+        type: object
+        fields:
+          - { name: oberzeile, label: Kleine Oberzeile, type: string }
+          - { name: titel, label: Überschrift, type: string }
+          - { name: text, label: Text, type: text }
+          - name: bereiche
+            label: Ausstattungs-Kästen
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{titel}"
+            fields:
+              - { name: titel, label: Überschrift, type: string }
+              - name: punkte
+                label: Punkte
+                type: string
+                list: true
+          - { name: hinweis, label: Hinweis darunter, type: string }
+      - name: buchung
+        label: Bereich „Preise & Verfügbarkeit“
+        type: object
+        fields:
+          - { name: oberzeile, label: Kleine Oberzeile, type: string }
+          - { name: titel, label: Überschrift, type: string }
+          - { name: text, label: Text, type: text }
+      - name: umgebung
+        label: Bereich „Umgebung“
+        type: object
+        fields:
+          - { name: oberzeile, label: Kleine Oberzeile, type: string }
+          - { name: titelSommer, label: Überschrift Sommer, type: string }
+          - { name: titelWinter, label: Überschrift Winter, type: string }
+          - { name: text, label: Text, type: text }
+          - name: sommer
+            label: Kacheln Sommer
+            description: Die Fotos dazu stellt ihr unter „Fotos“ ein.
+            type: object
+            list:
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{titel}"
+            fields:
+              - { name: titel, label: Überschrift, type: string }
+              - { name: text, label: Text, type: text }
+          - name: winter
+            label: Kacheln Winter
+            type: object
+            list:
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{titel}"
+            fields:
+              - { name: titel, label: Überschrift, type: string }
+              - { name: text, label: Text, type: text }
+          - { name: adresse, label: Adresse, type: string }
+          - { name: lageText, label: Text zur Lage, type: string }
+          - { name: routeKnopf, label: Knopf „Route planen“, type: string }
+      - name: faq
+        label: Häufige Fragen
+        type: object
+        fields:
+          - { name: oberzeile, label: Kleine Oberzeile, type: string }
+          - { name: titel, label: Überschrift, type: string }
+          - name: fragen
+            label: Fragen & Antworten
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{frage}"
+            fields:
+              - { name: frage, label: Frage, type: string }
+              - { name: antwort, label: Antwort, type: text }
+      - name: kontakt
+        label: Bereich „Kontakt“
+        type: object
+        fields:
+          - { name: oberzeile, label: Kleine Oberzeile, type: string }
+          - { name: titel, label: Überschrift, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: gastgeber, label: Name der Gastgeber, type: string }
+          - { name: gastgeberText, label: Text unter dem Namen, type: string }
+      - name: seo
+        label: Für Google (Titel & Beschreibung)
+        type: object
+        fields:
+          - { name: titel, label: Seitentitel, type: string }
+          - { name: beschreibung, label: Beschreibung, type: text }
+
+  - name: texte-en
+    label: Texte Englisch
+    type: file
+    path: content/texte-en.json
+    format: json
+    fields: *texte
+
+  - name: texte-nl
+    label: Texte Niederländisch
+    type: file
+    path: content/texte-nl.json
+    format: json
+    fields: *texte
+
+  - name: rechtliches
+    label: Impressum & Datenschutz
+    type: file
+    path: content/rechtliches.json
+    format: json
+    fields:
+      - name: impressum
+        label: Impressum
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+          media: false
+      - name: datenschutz
+        label: Datenschutzerklärung
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+          media: false

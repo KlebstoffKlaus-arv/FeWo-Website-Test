@@ -1,0 +1,64 @@
+{
+  "titelbildSommer": "/images/hero-haus.webp",
+  "titelbildWinter": "/images/galerie-winter-1.webp",
+  "galerie": [
+    {
+      "bild": "/images/wohnzimmer-1.webp",
+      "de": "Wohnbereich",
+      "en": "Living area",
+      "nl": "Woonkamer"
+    },
+    {
+      "bild": "/images/kueche-1.webp",
+      "de": "Küche",
+      "en": "Kitchen",
+      "nl": "Keuken"
+    },
+    {
+      "bild": "/images/schlafzimmer-1.webp",
+      "de": "Schlafzimmer 1",
+      "en": "Bedroom 1",
+      "nl": "Slaapkamer 1"
+    },
+    {
+      "bild": "/images/terrasse-1.webp",
+      "de": "Terrasse",
+      "en": "Terrace",
+      "nl": "Terras"
+    },
+    {
+      "bild": "/images/schlafzimmer-2.webp",
+      "de": "Schlafzimmer 2",
+      "en": "Bedroom 2",
+      "nl": "Slaapkamer 2"
+    },
+    {
+      "bild": "/images/bad-1.webp",
+      "de": "Bad",
+      "en": "Bathroom",
+      "nl": "Badkamer"
+    },
+    {
+      "bild": "/images/wohnzimmer-2.webp",
+      "de": "Essbereich",
+      "en": "Dining area",
+      "nl": "Eethoek"
+    },
+    {
+      "bild": "/images/galerie-aussicht.webp",
+      "de": "Ausblick",
+      "en": "View",
+      "nl": "Uitzicht"
+    }
+  ],
+  "umgebungSommer": [
+    "/images/galerie-sommer-1.webp",
+    "/images/lage-tal-aussicht.webp",
+    "/images/galerie-sommer-2.webp"
+  ],
+  "umgebungWinter": [
+    "/images/lage-winter.webp",
+    "/images/galerie-winter-2.webp",
+    "/images/galerie-winter-1.webp"
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "seo": {
+    "titel": "Ferienwohnung Elias – vakantieappartement in Riezlern, Kleinwalsertal",
+    "beschreibung": "Licht vakantieappartement in Riezlern, Kleinwalsertal (Oostenrijk): 64 m², 2 slaapkamers, rustige ligging, ski- en wandelbus voor de deur."
+  },
+  "start": {
+    "titelSommer": "Jouw thuis\nin de *bergen*.",
+    "titelWinter": "Jouw thuis\nin de *sneeuw*.",
+    "textSommer": "Rustig gelegen aan de rand van een weide, met de bushalte voor de deur en wandelpaden vanaf het huis. Ons lichte appartement is de perfecte uitvalsbasis voor gezinnen en vrienden.",
+    "textWinter": "Ski- en wandelbus voor de deur, een skischoendroger in huis en ’s avonds terug naar een warm, gezellig appartement.",
+    "knopfVerfuegbarkeit": "Beschikbaarheid bekijken",
+    "knopfFotos": "Foto’s bekijken",
+    "infoKarte1Titel": "0 m",
+    "infoKarte1Text": "naar de ski- & wandelbus",
+    "infoKarte2Titel": "Terras",
+    "infoKarte2Text": "met tuin & weide"
+  },
+  "eckdaten": [
+    {
+      "zahl": "64",
+      "text": "m² woonoppervlak"
+    },
+    {
+      "zahl": "2",
+      "text": "slaapkamers"
+    },
+    {
+      "zahl": "5",
+      "text": "volwassenen max. + kinderen"
+    },
+    {
+      "zahl": "3",
+      "text": "kamers in totaal"
+    }
+  ],
+  "wohnung": {
+    "oberzeile": "Het appartement",
+    "titel": "Licht, gezellig, doordacht.",
+    "text": "Twee slaapkamers, een woonruimte met keuken en een eigen terras met uitzicht op het groen. Tik op een foto om hem groot te zien."
+  },
+  "ausstattung": {
+    "oberzeile": "Voorzieningen",
+    "titel": "Alles wat je nodig hebt.",
+    "text": "Beddengoed en handdoeken zijn aanwezig – gewoon aankomen en je thuis voelen.",
+    "bereiche": [
+      {
+        "titel": "Keuken & wonen",
+        "punkte": [
+          "Oven, koelkast met vriesvak",
+          "Afzuigkap, keuken- & tafellinnen",
+          "Satelliet-tv, radio, gratis wifi"
+        ]
+      },
+      {
+        "titel": "Slapen & badkamer",
+        "punkte": [
+          "2 aparte slaapkamers",
+          "Beddengoed & handdoeken inbegrepen",
+          "Föhn in de badkamer"
+        ]
+      },
+      {
+        "titel": "Gezin & buiten",
+        "punkte": [
+          "Kinderbed & kinderstoel",
+          "Terras, tuinmeubels, ligstoelen",
+          "Parkeerplaats, fietsenstalling, skischoendroger"
+        ]
+      }
+    ],
+    "hinweis": "Rookvrij huis · Huisdieren helaas niet toegestaan"
+  },
+  "buchung": {
+    "oberzeile": "Prijzen & beschikbaarheid",
+    "titel": "Kies je periode.",
+    "text": "Tik op je aankomst- en vertrekdatum in de kalender – de prijs wordt direct berekend."
+  },
+  "umgebung": {
+    "oberzeile": "Omgeving",
+    "titelSommer": "Zomer in het Kleinwalsertal",
+    "titelWinter": "Winter in het Kleinwalsertal",
+    "text": "Een toptocht of een rustige wandeling – het begint direct voor de deur.",
+    "sommer": [
+      {
+        "titel": "Wandelen",
+        "text": "Talloze paden beginnen in Riezlern – van gezinswandeling tot toptocht."
+      },
+      {
+        "titel": "Bergbanen",
+        "text": "Met de gastenkaart omhoog naar het panorama – ideaal met kinderen."
+      },
+      {
+        "titel": "Fietsen & mountainbiken",
+        "text": "Rustige rondjes door het dal of sportieve tochten – je fiets staat veilig bij het huis."
+      }
+    ],
+    "winter": [
+      {
+        "titel": "Skiën",
+        "text": "Met de skibus vanaf de deur ben je in een paar minuten bij de liften."
+      },
+      {
+        "titel": "Langlaufen",
+        "text": "Geprepareerde loipes door het besneeuwde landschap."
+      },
+      {
+        "titel": "Winterwandelen",
+        "text": "Geruimde winterwandelpaden en berghutten om binnen te lopen."
+      }
+    ],
+    "adresse": "Eggstraße 15, 6991 Riezlern",
+    "lageText": "Rustige ligging aan de rand van een weide, bushalte direct bij het huis.",
+    "routeKnopf": "Route plannen"
+  },
+  "faq": {
+    "oberzeile": "Goed om te weten",
+    "titel": "Veelgestelde vragen",
+    "fragen": [
+      {
+        "frage": "Wanneer is aankomst en vertrek?",
+        "antwort": "Aankomst vanaf … uur, vertrek tot … uur. (Tijden nog invullen.)"
+      },
+      {
+        "frage": "Zijn beddengoed en handdoeken inbegrepen?",
+        "antwort": "Ja, bed-, keuken- en tafellinnen en handdoeken zijn aanwezig."
+      },
+      {
+        "frage": "Is er een parkeerplaats?",
+        "antwort": "Ja, er is een parkeerplaats bij het huis. Fietsen kunnen ook veilig worden gestald."
+      },
+      {
+        "frage": "Zijn huisdieren toegestaan?",
+        "antwort": "Helaas niet. Het appartement is bovendien rookvrij."
+      },
+      {
+        "frage": "Hoe kan ik betalen?",
+        "antwort": "Per bankoverschrijving of contant ter plaatse."
+      }
+    ]
+  },
+  "kontakt": {
+    "oberzeile": "Contact",
+    "titel": "We kijken ernaar uit je te verwelkomen!",
+    "text": "Stuur ons je aanvraag – we reageren persoonlijk, meestal binnen 24 uur.",
+    "gastgeber": "Familie Grabherr",
+    "gastgeberText": "Jullie gastheren in Riezlern"
+  }
+}

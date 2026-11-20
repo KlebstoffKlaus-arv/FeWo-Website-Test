@@ -1,0 +1,23 @@
+// Einstellungen für Cloudflare (Workers mit statischer Website).
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "ferienwohnung-elias",
+	"main": "worker/index.js",
+	"compatibility_date": "2026-11-01",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"html_handling": "auto-trailing-slash",
+		"not_found_handling": "404-page",
+		"run_worker_first": ["/api/*"]
+	},
+	"observability": { "enabled": true }
+
+	// E-Mail-Versand für das Anfrageformular.
+	// Erst aktivieren, wenn die Domain bei Cloudflare liegt und Email Routing mit
+	// der Empfänger-Adresse (fewoelias@gmail.com) bestätigt ist – dann die beiden
+	// Blöcke unten einkommentieren (vor "observability" ein Komma setzen).
+	//
+	// "send_email": [{ "name": "EMAIL" }],
+	// "vars": { "MAIL_FROM": "anfrage@ferienwohnung-elias.at" }
+}

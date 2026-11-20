@@ -1,0 +1,148 @@
+{
+  "seo": {
+    "titel": "Ferienwohnung Elias – holiday apartment in Riezlern, Kleinwalsertal",
+    "beschreibung": "Bright holiday apartment in Riezlern, Kleinwalsertal (Austria): 64 m², 2 bedrooms, quiet location, ski and hiking bus right outside."
+  },
+  "start": {
+    "titelSommer": "Your home\nin the *mountains*.",
+    "titelWinter": "Your home\nin the *snow*.",
+    "textSommer": "Quietly set at the edge of a meadow, with the bus stop right outside and hiking trails from the door. Our bright apartment is the perfect base for families and friends.",
+    "textWinter": "Ski and hiking bus right outside, a ski boot dryer in the house and a warm, cosy apartment to come back to in the evening.",
+    "knopfVerfuegbarkeit": "Check availability",
+    "knopfFotos": "View photos",
+    "infoKarte1Titel": "0 m",
+    "infoKarte1Text": "to the ski & hiking bus",
+    "infoKarte2Titel": "Terrace",
+    "infoKarte2Text": "with garden & meadow"
+  },
+  "eckdaten": [
+    {
+      "zahl": "64",
+      "text": "m² living space"
+    },
+    {
+      "zahl": "2",
+      "text": "bedrooms"
+    },
+    {
+      "zahl": "5",
+      "text": "adults max. + children"
+    },
+    {
+      "zahl": "3",
+      "text": "rooms in total"
+    }
+  ],
+  "wohnung": {
+    "oberzeile": "The apartment",
+    "titel": "Bright, cosy, well thought out.",
+    "text": "Two bedrooms, a living area with kitchen and a private terrace overlooking the greenery. Tap a photo to see it larger."
+  },
+  "ausstattung": {
+    "oberzeile": "Amenities",
+    "titel": "Everything you need.",
+    "text": "Bed linen and towels are provided – just arrive and feel at home.",
+    "bereiche": [
+      {
+        "titel": "Kitchen & living",
+        "punkte": [
+          "Oven, fridge with freezer compartment",
+          "Extractor hood, kitchen & table linen",
+          "Satellite TV, radio, free Wi-Fi"
+        ]
+      },
+      {
+        "titel": "Sleeping & bathroom",
+        "punkte": [
+          "2 separate bedrooms",
+          "Bed linen & towels included",
+          "Hairdryer in the bathroom"
+        ]
+      },
+      {
+        "titel": "Family & outdoors",
+        "punkte": [
+          "Cot & high chair",
+          "Terrace, garden furniture, deck chairs",
+          "Parking, bike storage, ski boot dryer"
+        ]
+      }
+    ],
+    "hinweis": "Non-smoking house · Sorry, no pets"
+  },
+  "buchung": {
+    "oberzeile": "Prices & availability",
+    "titel": "Choose your dates.",
+    "text": "Tap your arrival and departure in the calendar – the price is calculated instantly."
+  },
+  "umgebung": {
+    "oberzeile": "Area",
+    "titelSommer": "Summer in the Kleinwalsertal",
+    "titelWinter": "Winter in the Kleinwalsertal",
+    "text": "Summit tour or gentle stroll – it all starts right on your doorstep.",
+    "sommer": [
+      {
+        "titel": "Hiking",
+        "text": "Countless trails start right in Riezlern – from family walks to summit tours."
+      },
+      {
+        "titel": "Mountain lifts",
+        "text": "Ride up to the views with the guest card – great with kids."
+      },
+      {
+        "titel": "Cycling & biking",
+        "text": "Easy valley loops or sporty tours – your bike is stored safely at the house."
+      }
+    ],
+    "winter": [
+      {
+        "titel": "Skiing",
+        "text": "The ski bus from the door gets you to the lifts in minutes."
+      },
+      {
+        "titel": "Cross-country skiing",
+        "text": "Groomed trails through the snowy landscape."
+      },
+      {
+        "titel": "Winter walks",
+        "text": "Cleared winter paths and mountain huts to stop at."
+      }
+    ],
+    "adresse": "Eggstraße 15, 6991 Riezlern",
+    "lageText": "Quiet spot at the edge of a meadow, bus stop right by the house.",
+    "routeKnopf": "Plan your route"
+  },
+  "faq": {
+    "oberzeile": "Good to know",
+    "titel": "Frequently asked questions",
+    "fragen": [
+      {
+        "frage": "When are check-in and check-out?",
+        "antwort": "Check-in from … , check-out by … . (Please fill in the times.)"
+      },
+      {
+        "frage": "Are bed linen and towels included?",
+        "antwort": "Yes, bed, kitchen and table linen as well as towels are provided."
+      },
+      {
+        "frage": "Is there parking?",
+        "antwort": "Yes, there is a parking space at the house. Bikes can be stored safely too."
+      },
+      {
+        "frage": "Are pets allowed?",
+        "antwort": "Sorry, no. The apartment is also non-smoking."
+      },
+      {
+        "frage": "How can I pay?",
+        "antwort": "By bank transfer or in cash on site."
+      }
+    ]
+  },
+  "kontakt": {
+    "oberzeile": "Contact",
+    "titel": "We look forward to welcoming you!",
+    "text": "Send us your enquiry – we’ll get back to you personally, usually within 24 hours.",
+    "gastgeber": "The Grabherr family",
+    "gastgeberText": "Your hosts in Riezlern"
+  }
+}

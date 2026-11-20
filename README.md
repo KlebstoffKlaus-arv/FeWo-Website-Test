@@ -1,69 +1,57 @@
 # Ferienwohnung Elias – Website
 
-Neue, moderne Website für die Ferienwohnung „Elias" der Familie Grabherr-Mathis in Riezlern/Kleinwalsertal. Reines HTML5/CSS3/Vanilla-JavaScript ohne Build-Schritt – die Seite ist so aufgebaut, dass sie direkt über Hostingers native Git-Integration deployt werden kann.
+Moderne Website für die Ferienwohnung Elias in Riezlern (Deutsch, Englisch, Niederländisch).
+Gehostet kostenlos bei **Cloudflare**, bearbeitet ohne Programmierkenntnisse über **Pages CMS**.
 
-## Projektüberblick
+## So funktioniert es
 
-- **Startseite** (`index.html`) – Hero, Kurzüberblick, Teaser-Kacheln, Bildergalerie
-- **Die Wohnung** (`wohnung.html`) – Beschreibung, Ausstattung, Fotogalerie mit Lightbox
-- **Preise & Anfrage** (`preise-anfrage.html`) – Preistabelle, inkludierte Leistungen, Mietkonditionen, Anfrageformular
-- **Lage & Umgebung** (`lage.html`) – Kleinwalsertal, Sommer/Winter-Highlights, Anfahrt mit Karte
-- **Impressum** (`impressum.html`) & **Datenschutz** (`datenschutz.html`) – rechtliche Pflichtseiten, nur im Footer verlinkt
+1. Inhalte stehen in `content/` (Texte, Preise, Belegung, Fotos) und Fotos in `images/`.
+2. Wer in Pages CMS etwas speichert, ändert diese Dateien auf GitHub.
+3. Cloudflare merkt das, baut die Website neu (`npm run build`) und veröffentlicht sie – nach ca. 1–2 Minuten ist die Änderung online.
 
-### Ordnerstruktur
+## Ordner
 
-```
-/
-├── index.html
-├── wohnung.html
-├── preise-anfrage.html
-├── lage.html
-├── impressum.html
-├── datenschutz.html
-├── css/
-│   └── style.css
-├── js/
-│   ├── main.js       (Navigation, Scroll-Reveal)
-│   ├── gallery.js    (Lightbox-Galerie)
-│   └── form.js        (Formularvalidierung & Versand)
-├── images/            (Platzhalterbilder – bitte durch echte Fotos ersetzen)
-└── php/
-    └── send-mail.php  (Serverseitige Verarbeitung des Anfrageformulars)
-```
+| Ordner / Datei | Inhalt |
+|---|---|
+| `content/preise.json` | Belegung, Preise, Saisonpreise, Telefon, Anfrage-E-Mail |
+| `content/fotos.json` | welche Fotos wo erscheinen, Bildunterschriften |
+| `content/texte-de/en/nl.json` | alle Texte je Sprache |
+| `content/rechtliches.json` | Impressum und Datenschutzerklärung |
+| `images/` | Fotos (werden beim Bauen automatisch verkleinert) |
+| `src/` | Gestaltung (CSS), Skripte, Schriften, Logo |
+| `build/` | Baut aus Inhalten und Vorlage die fertigen Seiten nach `dist/` |
+| `worker/` | Verschickt Anfragen aus dem Formular per E-Mail |
+| `.pages.yml` | Welche Felder in Pages CMS erscheinen |
+| `wrangler.jsonc` | Cloudflare-Einstellungen |
 
-## Lokale Vorschau
+## Einrichtung (einmalig)
 
-Kein Build-Schritt nötig. Für eine lokale Vorschau reicht ein einfacher statischer Server, z. B. mit Python:
+### 1. Cloudflare
+1. Kostenloses Konto auf cloudflare.com anlegen.
+2. **Workers & Pages → Erstellen → Repository importieren** → GitHub verbinden → Repository `fewo-website-test` wählen.
+3. Branch: `cloudflare` · Build-Befehl: `npm run build` · Deploy-Befehl: `npx wrangler deploy` (Standard).
+4. Nach dem ersten Durchlauf ist die Seite unter `ferienwohnung-elias.<konto>.workers.dev` erreichbar.
+
+### 2. Pages CMS
+1. Auf app.pagescms.org mit GitHub anmelden und die Pages-CMS-App für das Repository erlauben.
+2. Repository öffnen, Branch `cloudflare` wählen.
+3. **Collaborators** → Eltern per E-Mail einladen. Sie brauchen keinen GitHub-Account.
+
+### 3. Eigene Domain (wenn alles passt)
+1. In Cloudflare **Domain hinzufügen** → `ferienwohnung-elias.at` → Free-Plan.
+2. Beim bisherigen Domain-Anbieter die Nameserver auf die zwei von Cloudflare angezeigten ändern.
+3. Im Worker unter **Einstellungen → Domains & Routen** `ferienwohnung-elias.at` und `www.ferienwohnung-elias.at` hinzufügen.
+
+### 4. Anfragen per E-Mail
+1. In Cloudflare bei der Domain **E-Mail → Email Routing** aktivieren.
+2. Unter **Zieladressen** `fewoelias@gmail.com` hinzufügen und den Link in der Bestätigungsmail anklicken.
+3. In `wrangler.jsonc` die Zeilen `send_email` und `vars` aktivieren (siehe Kommentar dort).
+
+Solange Schritt 4 fehlt, bietet das Formular Gästen automatisch an, die fertige Anfrage per E-Mail zu schicken – es geht also nichts verloren.
+
+## Lokal testen
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev     # baut die Seite und startet sie auf http://localhost:8787
 ```
-
-Anschließend im Browser `http://localhost:8000` öffnen.
-
-> Hinweis: Das PHP-Formular (`php/send-mail.php`) benötigt einen PHP-fähigen Server. Für einen lokalen Test mit PHP:
-> ```bash
-> php -S localhost:8000
-> ```
-
-## Platzhalterbilder
-
-Die Bilder im Ordner `images/` sind generierte Platzhalter in den korrekten Seitenverhältnissen (JPG + WebP, gleicher Dateiname). Beim Austausch gegen eigene Fotos:
-
-- gleichen Dateinamen und gleiches Seitenverhältnis beibehalten (oder Referenzen in den HTML-Dateien anpassen),
-- Bilder als WebP (mit JPG-Fallback über `<picture>`) und komprimiert bereitstellen,
-- aussagekräftige Alt-Texte in den `<img>`-Tags pflegen.
-
-## Deployment über Hostinger (Git-Integration)
-
-1. Dieses Repository auf GitHub (oder GitLab) pushen.
-2. In hPanel: **Websites → [Domain] → Advanced → Git**.
-3. Repository-URL und den gewünschten Branch (z. B. `main`) eintragen.
-4. **Auto-Deploy** aktiviert lassen – jeder Push auf den verbundenen Branch wird automatisch veröffentlicht.
-5. Da kein Build-Prozess läuft, wird exakt der Inhalt des Repositorys ausgeliefert. Sicherstellen, dass die Domain auf das Root-Verzeichnis dieses Repos zeigt (dort liegt `index.html`).
-6. Für das Kontaktformular: PHP-Hosting ist bei Hostinger standardmäßig aktiv, `php/send-mail.php` funktioniert ohne weitere Konfiguration.
-
-## Kontakt (Website-Betreiber)
-
-Familie Grabherr-Mathis, Eggstraße 15, A-6991 Riezlern
-Tel.: 0043/5517/3193 · Mobil: 0043/650/5173194 · E-Mail: fewoelias@gmail.com

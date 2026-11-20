@@ -1,0 +1,148 @@
+{
+  "seo": {
+    "titel": "Ferienwohnung Elias – Riezlern, Kleinwalsertal",
+    "beschreibung": "Helle Ferienwohnung in Riezlern im Kleinwalsertal: 64 m², 2 Schlafzimmer, ruhige Lage am Wiesenrand, Ski- und Wanderbus direkt vor der Tür."
+  },
+  "start": {
+    "titelSommer": "Dein Zuhause\nin den *Bergen*.",
+    "titelWinter": "Dein Zuhause\nim *Schnee*.",
+    "textSommer": "Ruhig am Wiesenrand, Bus direkt vor der Tür und Wanderwege ab Haus. Unsere helle Ferienwohnung ist der perfekte Ausgangspunkt für Familien und Freunde.",
+    "textWinter": "Ski- und Wanderbus direkt vor der Tür, Skischuhtrockner im Haus und abends gemütlich zurück in die warme Wohnung.",
+    "knopfVerfuegbarkeit": "Verfügbarkeit prüfen",
+    "knopfFotos": "Fotos ansehen",
+    "infoKarte1Titel": "0 m",
+    "infoKarte1Text": "zum Ski- & Wanderbus",
+    "infoKarte2Titel": "Terrasse",
+    "infoKarte2Text": "mit Garten & Wiese"
+  },
+  "eckdaten": [
+    {
+      "zahl": "64",
+      "text": "m² Wohnfläche"
+    },
+    {
+      "zahl": "2",
+      "text": "Schlafzimmer"
+    },
+    {
+      "zahl": "5",
+      "text": "Erwachsene max. + Kinder"
+    },
+    {
+      "zahl": "3",
+      "text": "Zimmer insgesamt"
+    }
+  ],
+  "wohnung": {
+    "oberzeile": "Die Wohnung",
+    "titel": "Hell, gemütlich, durchdacht.",
+    "text": "Zwei Schlafzimmer, ein Wohnbereich mit Küche und eine eigene Terrasse mit Blick ins Grüne. Tippe auf ein Bild, um es groß zu sehen."
+  },
+  "ausstattung": {
+    "oberzeile": "Ausstattung",
+    "titel": "Alles da, was du brauchst.",
+    "text": "Bettwäsche und Handtücher sind vorhanden – einfach anreisen und wohlfühlen.",
+    "bereiche": [
+      {
+        "titel": "Küche & Wohnen",
+        "punkte": [
+          "Backofen, Kühlschrank mit Gefrierfach",
+          "Dunstabzug, Küchen- & Tischwäsche",
+          "Sat-TV, Radio, kostenloses WLAN"
+        ]
+      },
+      {
+        "titel": "Schlafen & Bad",
+        "punkte": [
+          "2 separate Schlafzimmer",
+          "Bettwäsche & Handtücher inklusive",
+          "Föhn im Bad"
+        ]
+      },
+      {
+        "titel": "Familie & Draußen",
+        "punkte": [
+          "Kinderbett & Hochstuhl",
+          "Terrasse, Gartenmöbel, Liegestühle",
+          "Parkplatz, Radabstellplatz, Skischuhtrockner"
+        ]
+      }
+    ],
+    "hinweis": "Nichtraucherhaus · Haustiere leider nicht erlaubt"
+  },
+  "buchung": {
+    "oberzeile": "Preise & Verfügbarkeit",
+    "titel": "Wähle deinen Zeitraum.",
+    "text": "Tippe auf Anreise und Abreise im Kalender – der Preis wird sofort berechnet."
+  },
+  "umgebung": {
+    "oberzeile": "Umgebung",
+    "titelSommer": "Sommer im Kleinwalsertal",
+    "titelWinter": "Winter im Kleinwalsertal",
+    "text": "Ob Gipfeltour oder gemütlicher Spaziergang – direkt vor der Haustür geht’s los.",
+    "sommer": [
+      {
+        "titel": "Wandern",
+        "text": "Unzählige Wege starten direkt in Riezlern – vom Familienspaziergang bis zur Gipfeltour."
+      },
+      {
+        "titel": "Bergbahnen",
+        "text": "Mit der Gästekarte hinauf ins Panorama – ideal mit Kindern."
+      },
+      {
+        "titel": "Rad & Bike",
+        "text": "Gemütliche Talrunden oder sportliche Touren – dein Rad steht sicher am Haus."
+      }
+    ],
+    "winter": [
+      {
+        "titel": "Skifahren",
+        "text": "Mit dem Skibus ab Haustür in wenigen Minuten bei den Liften."
+      },
+      {
+        "titel": "Langlauf",
+        "text": "Gespurte Loipen durch die verschneite Landschaft."
+      },
+      {
+        "titel": "Winterwandern",
+        "text": "Geräumte Winterwanderwege und Hütten zum Einkehren."
+      }
+    ],
+    "adresse": "Eggstraße 15, 6991 Riezlern",
+    "lageText": "Ruhige Lage am Wiesenrand, Bushaltestelle direkt am Haus.",
+    "routeKnopf": "Route planen"
+  },
+  "faq": {
+    "oberzeile": "Gut zu wissen",
+    "titel": "Häufige Fragen",
+    "fragen": [
+      {
+        "frage": "Wann ist An- und Abreise?",
+        "antwort": "Anreise ab … Uhr, Abreise bis … Uhr. (Bitte Uhrzeiten eintragen.)"
+      },
+      {
+        "frage": "Sind Bettwäsche und Handtücher dabei?",
+        "antwort": "Ja, Bett-, Küchen- und Tischwäsche sowie Handtücher sind vorhanden."
+      },
+      {
+        "frage": "Gibt es einen Parkplatz?",
+        "antwort": "Ja, ein Parkplatz am Haus ist vorhanden. Fahrräder können ebenfalls sicher abgestellt werden."
+      },
+      {
+        "frage": "Sind Haustiere erlaubt?",
+        "antwort": "Leider nein. Die Wohnung ist außerdem ein Nichtraucherhaus."
+      },
+      {
+        "frage": "Wie kann ich bezahlen?",
+        "antwort": "Per Überweisung oder bar vor Ort."
+      }
+    ]
+  },
+  "kontakt": {
+    "oberzeile": "Kontakt",
+    "titel": "Wir freuen uns auf dich!",
+    "text": "Schick uns deine Anfrage – wir melden uns persönlich, meist innerhalb von 24 Stunden.",
+    "gastgeber": "Familie Grabherr",
+    "gastgeberText": "Eure Gastgeber in Riezlern"
+  }
+}
