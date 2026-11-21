@@ -1,6 +1,14 @@
 {
   "grundpreis": 95,
   "mindestnaechte": 1,
+  "saisonpreise": [
+    {
+      "name": "Winter",
+      "von": "2026-11-21",
+      "bis": "2027-03-31",
+      "preis": 100
+    }
+  ],
   "telefon": "+43 5517 3193",
   "anfrageEmail": "fewoelias@gmail.com"
 }
