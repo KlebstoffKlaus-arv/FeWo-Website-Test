@@ -1,10 +1,6 @@
 {
-  "grundpreis": null,
-  "endreinigung": null,
-  "gaestetaxe": null,
+  "grundpreis": 95,
   "mindestnaechte": 1,
-  "saisonpreise": [],
-  "belegung": [],
-  "anfrageEmail": "fewoelias@gmail.com",
-  "telefon": "+43 5517 3193"
+  "telefon": "+43 5517 3193",
+  "anfrageEmail": "fewoelias@gmail.com"
 }
